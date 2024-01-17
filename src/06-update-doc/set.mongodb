@@ -1,0 +1,15 @@
+use("prueba_tienda")
+
+
+db.products.updateOne(
+    //query
+    {_id: 2},
+    //change -> operators
+    {
+        $set: {
+            name: "changed name",
+            price: 3000,
+            tags: ['A','B','C']
+        }
+    }
+)

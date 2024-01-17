@@ -1,0 +1,12 @@
+use("prueba_tienda")
+
+db.products.updateOne(
+    //query
+    {_id: ObjectId('65a815fc36285185bc6e4224')},
+    //change -> operators
+    {
+        $inc: {
+            price: 100,
+        }
+    }
+)
