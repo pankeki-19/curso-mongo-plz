@@ -1,0 +1,23 @@
+use("prueba_tienda")
+
+db.iot.updateOne({
+    sensor:"A001",
+    date: "2022-01-04",
+}, {
+$push: {
+    readings: 12434
+}}, {
+    upsert: true
+})
+
+
+//Hice dos upserts sin querer
+
+// db.iot.updateOne({
+//     sensor: "A001",
+//     date: "2022-01-04"
+// }, {
+//     $pop: {
+//         readings: 1
+//     }
+// })

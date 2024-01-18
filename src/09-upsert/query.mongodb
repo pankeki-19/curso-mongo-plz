@@ -1,0 +1,2 @@
+use("prueba_tienda")
+db.iot.find()

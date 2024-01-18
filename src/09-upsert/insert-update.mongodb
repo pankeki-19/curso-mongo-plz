@@ -1,0 +1,28 @@
+use("prueba_tienda")
+
+db.iot.insertOne({
+   sensor: "A001",
+   date: "2022-01-03",
+   readings: [1212]
+})
+
+ db.iot.updateOne({
+    sensor:"A001",
+    date: "2022-01-03",
+}, {
+$push: {
+    readings: 2323
+}})
+
+
+
+//Para eliminar el registro más reciente
+
+// db.iot.updateOne({
+//     sensor: "A001",
+//     date: "2022-01-03"
+// }, {
+//     $pop: {
+//         readings: 1
+//     }
+// })
