@@ -1,0 +1,19 @@
+use("mi_base_de_datos")
+
+db.mi_coleccion.insertMany([
+    {
+        nombre: "John",
+        edad: 30
+    },
+    {
+        nombre: "Jane",
+        edad: 25
+    },
+    {
+        nombre: "Bob",
+        edad: 35
+    },
+
+])
+
+db.mi_coleccion.find()
