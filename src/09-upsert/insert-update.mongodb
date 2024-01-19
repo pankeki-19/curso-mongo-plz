@@ -16,7 +16,7 @@ $push: {
 
 
 
-//Para eliminar el registro más reciente
+//Para eliminar el registro más reciente 1 y el primero -1
 
 // db.iot.updateOne({
 //     sensor: "A001",

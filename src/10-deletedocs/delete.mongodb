@@ -1,0 +1,4 @@
+use("prueba_tienda")
+// db.products.deleteOne({_id: 1})
+// db.products.deleteMany({ price: 100})
+db.products.drop()
