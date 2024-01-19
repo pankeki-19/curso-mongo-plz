@@ -1,0 +1,24 @@
+use("prueba_tienda")
+
+// Using $gt (greater than) & $gte (greater than or equal)
+
+// db.inventory.find({ qty: {$gt: 20}}) No Incluye el 20
+// db.inventory.find({ qty: {$gte: 20}}) Incluye el 20
+
+// Using $lt (less than) & $lte (less than or equal)
+
+// db.inventory.find({ qty: {$lt: 20}})
+// db.inventory.find({ qty: {$lte: 20}})
+
+//Haciendo una consulta más compleja
+
+//JOIN
+
+// db.inventory.find({ qty: { $gte: 25, $lte: 35 }})
+// db.inventory.find({ qty: { $gte: 20, $lte: 25 }})
+
+// item.name sea ab y que la cantidad esté entre 20 y 25
+db.inventory.find({ 
+    "item.code": "123",
+    qty: { $gte: 20, $lte: 25 }
+})

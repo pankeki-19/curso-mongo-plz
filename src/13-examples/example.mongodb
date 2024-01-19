@@ -1,0 +1,12 @@
+use("prueba_tienda")
+db.iot.updateMany(
+    //query
+    {sensor: "A001"},
+    // update
+    {
+        //Eliminar de un array
+        $pull: {
+            readings: { $gte: 3 }
+        }
+    }
+)
