@@ -1,0 +1,14 @@
+use("prueba_tienda")
+
+//Using $eq (equal)
+// db.inventory.find({qty: 20})
+// db.inventory.find({qty: { $eq: 20 }})
+// Se encierra en comilla doble porque vamos a un subobjeto
+// db.inventory.find({"item.code": "123"})
+// db.inventory.find({"item.code": {$eq: "123"}})
+
+
+// Using $ne (no equal)
+
+db.inventory.find({qty: {$ne: 20}})
+

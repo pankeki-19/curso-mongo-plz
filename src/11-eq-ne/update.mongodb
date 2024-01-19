@@ -1,0 +1,14 @@
+use("prueba_tienda")
+
+//Esta consulta va a hacer update a todo los que no tengan un quantity de 20
+// Les añadirá 10 al quantity
+db.inventory.updateMany(
+    //Usando query - operators
+    {qty: {$ne: 20}},
+    //Update operators
+    {
+        $inc:{
+            qty: 10
+        }
+    }
+    )
