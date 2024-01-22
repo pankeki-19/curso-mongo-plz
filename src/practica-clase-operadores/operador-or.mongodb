@@ -1,0 +1,5 @@
+use("sample_mflix")
+db.movies.find(
+    {"$or": [{ "year": { "$gt": 2010 } }, { "imdb.votes": { "$gt": 1000000}}]},
+    {"imdb.votes":1, "year":1, "_id":0}
+)

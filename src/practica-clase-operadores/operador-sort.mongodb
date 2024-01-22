@@ -1,0 +1,2 @@
+use("sample_mflix")
+db.movies.find({},{"_id":0, "title":1, "awards.wins":1}).sort("awards.wins", -1).limit(5)

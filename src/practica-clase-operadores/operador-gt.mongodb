@@ -1,0 +1,5 @@
+use("sample_mflix")
+db.movies.find(
+    {"imdb.rating": {$gt:8}},
+    {"title":1, "_id":0, "imdb.rating":1 }
+)

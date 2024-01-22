@@ -1,4 +1,17 @@
 use("platzi_store")
 //regex (regular expresion) No se debe buscar una oración completa
+
+//Cuenta cuantos contienen line
 // db.inventory.find({"item.description": { $regex: /line/ }}).count()
-db.inventory.find({"item.description": { $regex: /line/ }})
+
+//Para buscar textos que incluyan line
+// db.inventory.find({"item.description": { $regex: /line/ }})
+
+//Asi se le quita case sensitive
+// db.inventory.find({"item.description": { $regex: /LINE/i }})
+
+//Terminan en line
+// db.inventory.find({"item.description": { $regex: /line$/i }})
+
+// Comiencen en single
+db.inventory.find({"item.description": { $regex: /^single/i }})

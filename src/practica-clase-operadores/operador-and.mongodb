@@ -1,0 +1,5 @@
+use("sample_mflix")
+db.movies.find(
+    {"$and": [{ "tomatoes.viewer.rating": { "$gt": 3 } }, { "tomatoes.viewer.numReviews": { "$lt": 200 } }]},
+    {"title":1,"tomatoes.viewer.rating":1, "tomatoes.viewer.numReviews":1,"_id":0}
+)
