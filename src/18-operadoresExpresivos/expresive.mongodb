@@ -1,0 +1,12 @@
+use("platzi_store")
+
+// db.monthlyBudget.find({ spent: {$gte: 100} })
+
+//Expresive Operator
+//Aquí hará la comparación con un mismo atributo
+// ¿Quienes gastaron más del presupuesto?
+db.monthlyBudget.find({
+    $expr: {
+        $gte: ["$spent", "$budget"]
+    }
+})
