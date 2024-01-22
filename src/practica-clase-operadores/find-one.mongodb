@@ -1,0 +1,5 @@
+//Se encontrará el primer documento
+//Dentro de la base de datos sample_mflix
+//En la colección movies.
+use("sample_mflix")
+db.movies.findOne()
