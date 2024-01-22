@@ -1,0 +1,54 @@
+use("sample_training")
+
+// AND forma implicita
+// db.inspections.find(
+//     {
+//         //Las dos condiciones que se deben cumplir
+//         sector: "Tax Preparers - 891", 
+//         result: "Unable to Locate"
+// }
+// ).count()
+
+
+// //AND explicito $and
+// db.inspections.find({
+//     //Forzosamente debe ir como un array
+//     $and: [
+//         { sector: "Tax Preparers - 891" },
+//         { result: "Unable to Locate" }
+//     ]
+// }).count()
+
+
+// OR $or: [{},{},{}]
+// db.inspections.find({
+//     $or: [
+//         { sector: "Tax Preparers - 891" },
+//         { result: "Unable to Locate" }
+//     ]
+// }).count()
+
+// NOR $nor: [{},{},{}]
+// db.inspections.find({
+//     $nor: [
+//         { sector: "Tax Preparers - 891" },
+//         { result: "Unable to Locate" }
+//     ]
+// }).count()
+
+//NOR usando projection
+// db.inspections.find({
+//     $nor: [
+//         { sector: "No Violation Issued" },
+//         { result: "Unable to Locate" }
+//     ]
+// }, {
+//     result: 1,
+//     _id: 0
+// }
+// )
+
+//NOT  $not = {}
+db.inspections.find({
+    result: {$not: {$regex: /Unable to locate/}}
+})
