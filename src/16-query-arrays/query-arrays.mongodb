@@ -1,0 +1,38 @@
+use("platzi_store")
+
+//$in, sirve para objetos y arrays
+
+//Trae todos los que tengan 20 y 25 en qty
+// db.inventory.find(
+//     {qty: {$in: [20, 25]}}
+// )
+
+// Dentro del array este book u electronics no los dos
+// db.inventory.find({tags:{$in: ["book", "electronics"]}})
+
+//$nin que no estén los elementos
+// db.inventory.find({tags:{$nin: ["book", "electronics"]}})
+
+
+// Estos UNICAMENTE funcionan para arrays
+// db.inventory.find({tags:"book"})
+//Es estrictamente en la posición solicitada
+// db.inventory.find({tags:["book", "school"]})
+
+//$all 
+// db.inventory.find({tags:{$all: ["book", "school"]}}) //Debe tener ambos, school y books
+
+//$size
+//El tamaño del array debe tener cierto número de elementos
+// db.inventory.find({tags:{$size: 2}})
+
+//$elemMatch
+//Es para una estructura de arrays con arrays dentro
+// db.survey.find({results:{$elemMatch: {product: "xyz"}}})
+db.survey.find({
+    results:
+    {$elemMatch: {
+        product: "xyz", 
+        score: {$gte: 7} 
+    }}})
+

@@ -14,4 +14,8 @@ use("platzi_store")
 // db.inventory.find({"item.description": { $regex: /line$/i }})
 
 // Comiencen en single
-db.inventory.find({"item.description": { $regex: /^single/i }})
+// db.inventory.find({"item.description": { $regex: /^single/i }})
+
+//Con salto de linea, al principio de la linea
+// m de multiline
+db.inventory.find({"item.description": { $regex: /^s/im }})
