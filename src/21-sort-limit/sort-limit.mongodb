@@ -1,0 +1,8 @@
+use("sample_training")
+
+
+// 1 es foma acendente -1 es decendente
+db.zips
+    .find({pop:{$gte: 100}})
+    .sort({pop: 1}) // 1 es foma acendente -1 es decendente
+    .limit(2)
