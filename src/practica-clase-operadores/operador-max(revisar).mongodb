@@ -1,1 +1,10 @@
 use("sample_mflix")
+db.movies.findOne({
+    "awards.wins": db.movies.aggregate([{
+        $group:{
+            "_id":null,
+            "maxAwards":{$max:"$awards.wins"}
+        }
+    }])
+    [0]["maxAwards"]
+}, {"title":1})

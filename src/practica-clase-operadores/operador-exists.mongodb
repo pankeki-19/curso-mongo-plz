@@ -4,4 +4,4 @@ use("sample_mflix")
 //     {"title":1, "awards":1, "_id":0}
 // ).limit(20)
 
-db.movies.find({"awards": {exists: True, $ne: None}}).limit(20)
+db.movies.find({"awards": {$exists: true, $ne: null}}).limit(20)

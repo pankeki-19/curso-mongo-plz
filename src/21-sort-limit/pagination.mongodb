@@ -2,5 +2,5 @@ use("platzi_store")
 
 db.categories
     .find()
-    .skip(2)
+    .skip(0)
     .limit(2)
